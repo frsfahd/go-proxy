@@ -9,6 +9,10 @@ build:
 	
 	@go build -o go-proxy main.go
 
+build-windows:
+	@echo "Building for Windows..."
+	@env GOOS=windows GOARCH=amd64 go build -o go-proxy.exe main.go
+
 # Run the application
 run:
 	@go run main.go
@@ -52,4 +56,4 @@ watch:
             fi; \
         fi
 
-.PHONY: all build run clean watch docker-run docker-down 
+.PHONY: all build run clean watch docker-run docker-down build-windows
