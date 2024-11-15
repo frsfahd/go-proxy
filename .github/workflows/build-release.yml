@@ -1,0 +1,20 @@
+name: build-release-ci
+
+on:
+  push:
+    tags: 
+    - '*'
+  
+jobs:
+  build_and_release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install dependencies
+      run: make build
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "go-proxy"
+    
