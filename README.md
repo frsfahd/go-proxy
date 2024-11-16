@@ -1,6 +1,6 @@
 # go-proxy
 
-Simple forward proxy. Utilizing redis on local caching
+Simple [proxy server](https://roadmap.sh/projects/caching-server). Utilizing redis on local caching
 
 ## Getting Started
 
