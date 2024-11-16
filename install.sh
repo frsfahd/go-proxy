@@ -7,9 +7,9 @@ LATEST_TAG=$(curl -s https://api.github.com/repos/frsfahd/go-proxy/releases/late
 BINARY_URL="https://github.com/frsfahd/go-proxy/releases/download/$LATEST_TAG/go-proxy"
 
 # Download the binary from GitHub
-curl -L -o /usr/local/bin/go-proxy $BINARY_URL
+sudo curl -L -o /usr/local/bin/go-proxy $BINARY_URL
 
 # Make the binary executable
-chmod +x /usr/local/bin/go-proxy
+sudo chmod +x /usr/local/bin/go-proxy
 
 echo "Installation complete!"
