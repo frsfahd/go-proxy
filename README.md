@@ -25,7 +25,13 @@ redis:
 - run the app :
 
 ```bash
-go-proxy --port [PORT] --origin [target-server] --config [config-file]
+go-proxy --port <PORT> --origin <target-server> --config [config-file]
+```
+
+example :
+
+```bash
+go-proxy --port 8080 --origin https://jsonplaceholder.typicode.com/ --config config.yaml
 ```
 
 ## MakeFile
