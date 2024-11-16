@@ -1,53 +1,79 @@
-# Project github.com/frsfahd/go-cacheProxy-v2
+# go-proxy
 
-One Paragraph of project description goes here
+Simple forward proxy. Utilizing redis on local caching
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+To run on your machine:
+
+- run this command to install :
+
+```bash
+sudo curl -fsSL https://raw.githubusercontent.com/frsfahd/go-proxy/refs/heads/main/install.sh | bash
+```
+
+- create config file (`.yaml`) for defining redis connection (if you don't have redis instance, spin one up using `docker-compose.yml`). use this structure for config file :
+
+```yaml
+redis:
+  host:
+  port:
+  username:
+  password:
+```
+
+- run the app :
+
+```bash
+go-proxy --port [PORT] --origin [target-server] --config [config-file]
+```
 
 ## MakeFile
 
-Run build make command with tests
+Run build make command
+
 ```bash
 make all
 ```
 
 Build the application
+
 ```bash
 make build
 ```
 
+Build the application in windows
+
+```bash
+make build-windows
+```
+
 Run the application
+
 ```bash
 make run
 ```
-Create DB container
+
+Create redis container
+
 ```bash
 make docker-run
 ```
 
-Shutdown DB Container
+Shutdown redis Container
+
 ```bash
 make docker-down
 ```
 
-DB Integrations Test:
-```bash
-make itest
-```
-
 Live reload the application:
+
 ```bash
 make watch
 ```
 
-Run the test suite:
-```bash
-make test
-```
-
 Clean up binary from the last build:
+
 ```bash
 make clean
 ```
