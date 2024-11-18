@@ -19,7 +19,7 @@ import (
 func createProxy(target string, s *Server, r *http.Request) *httputil.ReverseProxy {
 	url, err := url.Parse(target)
 	reqUrl := fmt.Sprintf("%s:%s", url.Host, r.URL.RequestURI())
-	slog.Info("redis key", "reqUrl", reqUrl)
+	// slog.Info("redis key", "reqUrl", reqUrl)
 	if err != nil {
 		slog.Error("failed parsing url", "error", err.Error())
 	}

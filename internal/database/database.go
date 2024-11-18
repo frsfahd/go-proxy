@@ -22,7 +22,7 @@ type service struct {
 }
 
 func New(configs config.Config) Service {
-	log.Println(configs.Redis.Host, configs.Redis.Port)
+	// log.Println(configs.Redis.Host, configs.Redis.Port)
 
 	fullAddress := fmt.Sprintf("%s:%s", configs.Redis.Host, configs.Redis.Port)
 
